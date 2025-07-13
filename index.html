@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather in Adom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="sky"></div> <div class="weather-container">
+        <h1>Live Weather</h1>
+        <h2 id="location-name">Loading...</h2>
+        <div class="weather-info">
+            <p>Temperature: <span id="temperature">--</span></p>
+            <p>Feels like: <span id="feels-like">--</span></p>
+            <p>Condition: <span id="condition">--</span></p>
+            <p>Humidity: <span id="humidity">--</span></p>
+            <p>Wind Speed: <span id="wind-speed">--</span></p>
+            <p>Pressure: <span id="pressure">--</span></p>
+        </div>
+        <div class="adom-conversion">
+            <h3>Temperature in Adom Scale:</h3>
+            <p><span id="temperature-adom">--</span>$^{\circ}A$</p>
+        </div>
+        <p class="last-updated">Last updated: <span id="last-updated">--</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

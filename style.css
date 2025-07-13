@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Fallback background */
+    color: #333;
+    overflow: hidden; /* Prevent scrollbars if sky goes slightly beyond viewport */
+}
+
+.weather-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    position: relative; /* To position it above the sky div */
+    z-index: 1; /* Make sure it's above the sky background */
+}
+
+h1 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #555;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.weather-info p {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+.weather-info span {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.adom-conversion {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+
+.adom-conversion h3 {
+    color: #FF5722;
+    margin-bottom: 10px;
+}
+
+.adom-conversion span {
+    font-size: 1.5em;
+    color: #FF5722;
+}
+
+.last-updated {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* Sky Background Styles */
+#sky {
+    position: absolute; /* Positioned relative to the body */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Puts it behind the weather-container */
+    transition: background-color 1.5s ease, background-image 1.5s ease; /* Smooth transitions between weather types */
+}
+
+/* --- Specific Sky Conditions --- */
+
+/* Default/Fallback */
+#sky {
+    background-color: #f0f0f0;
+}
+
+/* Clear Sky */
+.sky-clear {
+    background: linear-gradient(to top, #7ed6df, #22a6b3); /* Light blue to deeper blue */
+}
+
+/* Clouds */
+.sky-clouds {
+    background: linear-gradient(to top, #dfe6e9, #b2bec3); /* Light grey to darker grey */
+}
+
+/* Rain */
+.sky-rain {
+    background: linear-gradient(to top, #a4b0be, #747d8c); /* Darker grey, hinting at rain */
+}
+
+/* Drizzle (often similar to rain/clouds) */
+.sky-drizzle {
+    background: linear-gradient(to top, #b2bec3, #8f929b);
+}
+
+/* Thunderstorm */
+.sky-thunderstorm {
+    background: linear-gradient(to top, #57606f, #2f3640); /* Very dark, stormy look */
+}
+
+/* Snow */
+.sky-snow {
+    background: linear-gradient(to top, #ffffff, #e0e0e0); /* White to light grey */
+}
+
+/* Mist, Smoke, Haze, Dust, Fog, Sand, Ash, Squall, Tornado (generally atmospheric) */
+.sky-atmosphere {
+    background: linear-gradient(to top, #dcdde1, #c8d6e5); /* Muted, hazy tones */
+}
+
+/* Specific conditions based on OpenWeatherMap 'main' category */
+/* Fallback if main doesn't match predefined */
+.sky-default {
+    background-color: #f0f0f0;
+}
